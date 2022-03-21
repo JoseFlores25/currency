@@ -1,28 +1,17 @@
-import React, { useState } from "react";
+import React from "react";
 
-export const Exchange = () => {
-  const [amount, setAmount] = useState("");
-  const [text, setText] = useState(" ");
+export const Exchange = (props) => {
+  const { currencyOptions } = props;
   return (
-    <div className="from">
-      <from>
-        <ul>
-          <input
-            type="number"
-            value={amount}
-            onChange={(e) => setAmount(e.target.value)}
-            placeholder="1"
-          />
-          <input
-            type="text"
-            value={amount}
-            onChange={(e) => setAmount(e.target.value)}
-            placeholder="0.018"
-          />
-          <input type="number" value={text} placeholder="DR Peso" />
-          <input type="text" value={amount} placeholder="USA Dollar." />
-        </ul>
-      </from>
+    <div>
+      <input type="number" className="input" />
+      <select>
+        {currencyOptions.map((option) => (
+          <option key={option} value={option}>
+            {option}
+          </option>
+        ))}
+      </select>
     </div>
   );
 };

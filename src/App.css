@@ -2,6 +2,7 @@
   margin: 30px auto;
   width: 350px;
   border-bottom: 1px solid rgb(3, 3, 3);
+  font-family: "Lato", sans-serif;
 }
 h1 {
   letter-spacing: 1px;
@@ -17,37 +18,23 @@ body {
   margin: 0;
   font-family: "Lato", sans-serif;
 }
-input[type="text"],
-input[type="number"] {
-  border: 1px solid #dedede;
-  border-radius: 2px;
-  display: block;
-  font-size: 16px;
-  padding: 10px;
-  width: 30%;
-  background-color: #fff;
-  box-shadow: var(--box-shadow);
-  color: #333;
-  display: flex;
-  justify-content: space-between;
-  position: relative;
-  padding: 10px;
-  margin: 10px 0;
+.input {
+  border: 1px soild #333333;
+  border-radius: 3em;
+  padding: 0.25rem;
+  width: 7em;
 }
 
-.love {
-  width: 600px;
-  border: 1px solid black;
+select {
+  border: 1px soild #333333;
+  border-radius: 3em;
+  padding: 0.25rem;
+  width: 5em;
+  margin-left: 0.5rem;
+  border-width: 2px;
 }
-.form input {
-  width: 33.33%;
-  display: inline-block;
-  margin: 0 1.1% 0 0;
-  padding: 0;
-}
-.form {
-  display: flex; /*Add display flex*/
-}
-.form input:last-child {
-  margin-right: 0 !important; /*remove margin-right from last input*/
+
+.equals {
+  font-weight: bold;
+  font-size: 1.2rem;
 }
