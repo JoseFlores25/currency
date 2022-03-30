@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from "react";
-import "./App.css";
 import { Header } from "./components/Header";
-import { Exchange } from "./components/Exchange";
+import "./App.css";
+import { CurrencyRow } from "./components/CurrencyRow";
 
 const BASE_URL =
-  "http://api.exchangeratesapi.io/latest?access_key=e733ef71b9752811e01c874478bccdcb";
+  "https://api.exchangeratesapi.io/v1/latest?access_key=fb846a5adf3ef6e516e6fb65327ec354";
 
 function App() {
   const [currencyOptions, setCurrencyOptions] = useState([]);
@@ -23,12 +23,21 @@ function App() {
     fromAmount = amount / exchangeRate;
   }
 
+  function handleErrors(response) {
+    if (!response.ok) {
+      throw Error(response.statusText);
+    }
+    return response;
+  }
+
   useEffect(() => {
     fetch(BASE_URL)
+      .then(handleErrors)
       .then((res) => res.json())
       .then((data) => {
+        // console.log(data);
         const firstCurrency = Object.keys(data.rates)[0];
-        setCurrencyOptions([data.base, ...Object.keys(data.rates)]);
+        setCurrencyOptions([...Object.keys(data.rates)]);
         setFromCurrency(data.base);
         setToCurrency(firstCurrency);
         setExchangeRate(data.rates[firstCurrency]);
@@ -37,9 +46,17 @@ function App() {
 
   useEffect(() => {
     if (fromCurrency != null && toCurrency != null) {
-      fetch(`${BASE_URL}?base=${fromCurrency}&symbols=${toCurrency}`)
+      fetch(`${BASE_URL}&base=${fromCurrency}&symbols=${toCurrency}`)
+        .then(handleErrors)
         .then((res) => res.json())
-        .then((data) => setExchangeRate(data.rates[toCurrency]));
+        .then((data) => {
+          console.log(toCurrency);
+          console.log(data);
+          setExchangeRate(data.rates[toCurrency]);
+        })
+        .catch(function (error) {
+          console.log(error);
+        });
     }
   }, [fromCurrency, toCurrency]);
 
@@ -47,6 +64,7 @@ function App() {
     setAmount(e.target.value);
     setAmountInFromCurrency(true);
   }
+
   function handleToAmountChange(e) {
     setAmount(e.target.value);
     setAmountInFromCurrency(false);
@@ -55,16 +73,15 @@ function App() {
   return (
     <>
       <Header />
-
-      <Exchange
+      <CurrencyRow
         currencyOptions={currencyOptions}
         selectedCurrency={fromCurrency}
         onChangeCurrency={(e) => setFromCurrency(e.target.value)}
         onChangeAmount={handleFromAmountChange}
         amount={fromAmount}
       />
-      <div className="equals">= </div>
-      <Exchange
+      <div className="equals">=</div>
+      <CurrencyRow
         currencyOptions={currencyOptions}
         selectedCurrency={toCurrency}
         onChangeCurrency={(e) => setToCurrency(e.target.value)}

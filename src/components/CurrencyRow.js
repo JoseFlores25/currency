@@ -1,6 +1,6 @@
 import React from "react";
 
-export const Exchange = (props) => {
+export const CurrencyRow = (props) => {
   const {
     currencyOptions,
     selectedCurrency,
