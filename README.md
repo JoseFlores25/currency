@@ -7,7 +7,7 @@
 <il>use a api key</il>
 
 <h2>About</h2>
-<p>This project was a nice simple project i choose to make. <br>Is about money exchange from DOLLARS to PESO and more.</p>
+My name is Jose Flores and I'm working on becoming a Computer programmer. Im doing a bootcamp to help me reach my goals of becoming a professional programmer. I decide to build a Currency Exchange project by using React. I was able to use props , useEffect, useState, and components to build my Currency project.
 <h3>What i use to build it ?</h3>
 1. a API KEY <br>
 2. useState<br>
