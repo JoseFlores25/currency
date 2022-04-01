@@ -13,4 +13,6 @@ My name is Jose Flores and I'm working on becoming a Computer programmer. <br/>I
 2. useState<br>
 3. useEffect<br>
 4. state and props
+  
 
+<img width="1680" alt="Screen Shot 2022-03-31 at 8 01 59 PM" src="https://user-images.githubusercontent.com/74205482/161171737-bdf473d8-f76e-43e3-bede-6df18ca180a7.png">
