@@ -1,6 +1,9 @@
 import React, { useEffect, useState } from "react";
+
 import { CurrencyRow } from "../components/CurrencyRow";
+import Footer from "../components/Footer/Footer";
 import { Header } from "../components/Header";
+import "../App.css";
 
 const BASE_URL =
   "https://api.exchangeratesapi.io/v1/latest?access_key=fb846a5adf3ef6e516e6fb65327ec354";
@@ -85,6 +88,7 @@ export const Home = () => {
         onChangeAmount={handleToAmountChange}
         amount={toAmount}
       />
+      <Footer />
     </div>
   );
 };

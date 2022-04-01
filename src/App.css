@@ -7,7 +7,15 @@
 h1 {
   letter-spacing: 1px;
   margin: 0;
+  border-bottom: 1px solid rgb(3, 3, 3);
 }
+h2 {
+  letter-spacing: 1px;
+  margin: 0;
+  border-bottom: 1px solid rgb(3, 3, 3);
+  font-family: "Lucida Console", "Courier New", monospace;
+}
+
 body {
   background-color: #f7f3f3;
   display: flex;
@@ -37,4 +45,7 @@ select {
 .equals {
   font-weight: bold;
   font-size: 1.2rem;
+}
+p {
+  font-family: "Lucida Console", "Courier New", monospace;
 }
