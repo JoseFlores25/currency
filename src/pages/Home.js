@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { CurrencyRow } from "../components/CurrencyRow";
+import { Header } from "../components/Header";
 
 const BASE_URL =
   "https://api.exchangeratesapi.io/v1/latest?access_key=fb846a5adf3ef6e516e6fb65327ec354";
@@ -68,6 +69,7 @@ export const Home = () => {
   }
   return (
     <div>
+      <Header />
       <CurrencyRow
         currencyOptions={currencyOptions}
         selectedCurrency={fromCurrency}
