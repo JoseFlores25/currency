@@ -1,9 +1,51 @@
 {
-    "posts": [
-      { "id": 1, "title": "json-server", "author": "typicode" }
-    ],
-    "comments": [
-      { "id": 1, "body": "some comment", "postId": 1 }
-    ],
-    "profile": { "name": "typicode" }
-  }
+  "cryptoCurrency": [
+    {
+      "id": 1,
+      "name": "Bitcoin",
+      "rank": 1
+    },
+    {
+      "id": 2,
+      "name": "Ethereum",
+      "rank": 2
+    },
+    {
+      "id": 3,
+      "name": "XRP",
+      "rank": 3
+    },
+    {
+      "id": 4,
+      "name": "Tether",
+      "rank": 4
+    },
+    {
+      "id": 5,
+      "name": "Cardano",
+      "rank": 5
+    },
+    {
+      "id": 5,
+      "name": "Polkadot",
+      "rank": 6
+    },
+    {
+      "id": 5,
+      "name": "Steller",
+      "rank": 7
+    },
+    {
+      "id": 6
+    },
+    {
+      "id": 7
+    },
+    {
+      "id": 8
+    },
+    {
+      "id": 9
+    }
+  ]
+}

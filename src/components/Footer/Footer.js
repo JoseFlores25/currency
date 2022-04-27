@@ -1,5 +1,5 @@
 import React from "react";
-import { Outlet, Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 import "./footer.css";
 
@@ -10,6 +10,9 @@ export default function Footer() {
         <ul>
           <li>
             <Link to="/about">About</Link>
+          </li>
+          <li>
+            <Link to="/crypto">Crypto</Link>
           </li>
           <li>
             <a href="https://medium.com/@flores.jose2185/currency-exchange-85c2594bde89">
