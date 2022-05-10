@@ -16,7 +16,7 @@ function Crypto() {
   const handleAddCrypto = async () => {
     await fetch("http://localhost:3001/cryptoCurrency", {
       method: "POST",
-      // body: JSON.stringify({ name: " ", rank: 0 }),
+      body: JSON.stringify({ name: " ", rank: 0 }),
       headers: {
         "Content-Type": "application/json",
         Accept: "application/json",
