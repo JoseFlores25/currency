@@ -3,7 +3,7 @@ import React from "react";
 
 import { Home } from "./pages/Home";
 import { About } from "./components/About";
-import Crypto from "./pages/Crypto/index";
+import Crypto from "./pages/Crypto";
 
 function App() {
   return (

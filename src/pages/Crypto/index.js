@@ -4,7 +4,7 @@ function Crypto() {
   const [cryptos, setCryptos] = useState([]);
 
   const handleGetCryptos = async () => {
-    const res = await fetch("http://localhost:3000/cryptoCurrency", {
+    const res = await fetch("http://localhost:3001/cryptoCurrency", {
       method: "GET",
     });
 
@@ -14,9 +14,13 @@ function Crypto() {
   };
 
   const handleAddCrypto = async () => {
-    await fetch("http://localhost:3000/cryptoCurrency", {
+    await fetch("http://localhost:3001/cryptoCurrency", {
       method: "POST",
-      body: JSON.stringify({ name: "s", rank: 10 }),
+      // body: JSON.stringify({ name: " ", rank: 0 }),
+      headers: {
+        "Content-Type": "application/json",
+        Accept: "application/json",
+      },
     });
 
     await handleGetCryptos();
@@ -28,7 +32,7 @@ function Crypto() {
 
   return (
     <form>
-      <p>Crypto</p>
+      <p>Crypto Top 10</p>
       <label>
         <input type="text" placeholder="Add crypto" />
         <input type={"submit"} onSubmit={handleAddCrypto} />
