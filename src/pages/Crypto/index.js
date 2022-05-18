@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 
 function Crypto() {
   const [cryptos, setCryptos] = useState([]);
+  const [name, setName] = useState("");
 
   const handleGetCryptos = async () => {
     const res = await fetch("http://localhost:3001/cryptoCurrency", {
@@ -13,16 +14,18 @@ function Crypto() {
     setCryptos(resJson);
   };
 
-  const handleAddCrypto = async () => {
+  const handleAddCrypto = async (e) => {
+    e.preventDefault();
     await fetch("http://localhost:3001/cryptoCurrency", {
       method: "POST",
-      body: JSON.stringify({ name: " ", rank: 0 }),
+      body: JSON.stringify({ name, rank: 0 }),
       headers: {
-        "Content-Type": "application/json",
+        "Content-Type": "application/json; charset=UTF-8",
         Accept: "application/json",
       },
     });
 
+    setName("");
     await handleGetCryptos();
   };
 
@@ -34,11 +37,16 @@ function Crypto() {
     <form>
       <p>Crypto Top 10</p>
       <label>
-        <input type="text" placeholder="Add crypto" />
-        <input type={"submit"} onSubmit={handleAddCrypto} />
+        <input
+          value={name}
+          onChange={(event) => setName(event.target.value)}
+          type="type"
+          placeholder="Top rank"
+        />
+        <button onClick={handleAddCrypto}> Submit</button>
       </label>
       {cryptos.map((crypto) => (
-        <p>{crypto.name}</p>
+        <p key={`unique + ${crypto.id}`}>{crypto.name}</p>
       ))}
     </form>
   );
