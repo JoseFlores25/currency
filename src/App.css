@@ -49,3 +49,11 @@ select {
 p {
   font-family: "Lucida Console", "Courier New", monospace;
 }
+
+img {
+  position:relative ;
+  width: 70%;
+  border: 2px black;
+  border-radius: 12px;
+  padding: 5px;
+}

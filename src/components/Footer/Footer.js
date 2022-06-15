@@ -14,13 +14,9 @@ export default function Footer() {
           <li>
             <Link to="/crypto">Crypto</Link>
           </li>
+
           <li>
-            <a href="https://medium.com/@flores.jose2185/currency-exchange-85c2594bde89">
-              Blogs
-            </a>
-          </li>
-          <li>
-            <a href="https://github.com/JoseFlores25/currency">Github</a>
+            <Link to="/history">History</Link>
           </li>
         </ul>
       </nav>

@@ -6,14 +6,15 @@
       "rank": 1
     },
     {
-      "name": "Dogde coin",
+      "name": "Ethereum",
       "rank": 0,
       "id": 2
     },
     {
-      "name": "Cardano",
+      "name": "Tether",
       "rank": 0,
       "id": 3
     }
+    
   ]
 }
